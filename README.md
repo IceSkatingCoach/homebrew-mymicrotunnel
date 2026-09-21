@@ -5,8 +5,16 @@ WireGuard tunnel to a gateway in your own AWS account.
 
 ```sh
 brew tap IceSkatingCoach/mymicrotunnel
+brew trust IceSkatingCoach/mymicrotunnel
 brew install --cask mymicrotunnel
 ```
+
+Homebrew 7 refuses to run a cask from a tap outside Homebrew's own
+repositories until you say you trust it — a cask is Ruby that runs on your
+machine, and this one installs a package that asks for your password. The
+`brew trust` line is that decision, made once. Read
+[`Casks/mymicrotunnel.rb`](Casks/mymicrotunnel.rb) first if you would rather
+know what you are trusting; it is forty lines.
 
 The cask installs the signed, notarized package from
 <https://downloads.maragato.ca>, which is the same build the app updates
